@@ -15,17 +15,19 @@ public class Main {
         Recipe cezar = new Recipe("Цезарь", meat, salat, mayonnaise);
         Recipe kaleidoscope = new Recipe("Калейдоскоп", meat, salat, mayonnaise);
         Recipe milkCocktaile = new Recipe("Молочный коктейль", apple, banana, milk);
+        Recipe fructesSalat = new Recipe("Фруктовый салат", kiwi, banana, orange);
 
         Set<Recipe> recipes = new HashSet<>();
         recipes.add(cezar);
         recipes.add(milkCocktaile);
         recipes.add(kaleidoscope);
+        recipes.add(fructesSalat);
 
         System.out.println(recipes);
         System.out.println();
 
         int size = 20;
-        ArrayList<Integer> numbers = new ArrayList<Integer>(size);
+        ArrayList<Integer> numbers = new ArrayList<>(size);
 
         Random random = new Random();
         for (int i = 0; i < size; i++) {
@@ -33,8 +35,6 @@ public class Main {
         }
 
         System.out.println(numbers);
-        numbers.remove(3);
-
         for (int i = 0; i < numbers.size(); i++) {
             if (numbers.get(i) % 2 != 0) {
                 numbers.remove(i--);
