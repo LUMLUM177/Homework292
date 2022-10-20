@@ -1,4 +1,4 @@
-public class DuplicateProductException extends RuntimeException {
+public class DuplicateProductException extends Exception {
 
     public DuplicateProductException() {
     }

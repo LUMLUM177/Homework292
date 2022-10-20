@@ -1,7 +1,7 @@
 import java.util.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NullFillingDataException {
 
         Product banana = new Product("Банан", 50, 5);
         Product orange = new Product("Апельсин", 100, 4);
@@ -27,7 +27,7 @@ public class Main {
         System.out.println();
 
         int size = 20;
-        ArrayList<Integer> numbers = new ArrayList<>(size);
+        List<Integer> numbers = new ArrayList<>(size);
 
         Random random = new Random();
         for (int i = 0; i < size; i++) {
@@ -35,9 +35,12 @@ public class Main {
         }
 
         System.out.println(numbers);
-        for (int i = 0; i < numbers.size(); i++) {
-            if (numbers.get(i) % 2 != 0) {
-                numbers.remove(i--);
+
+        Iterator<Integer> iter = numbers.iterator();
+        while (iter.hasNext()) {
+            Integer next = iter.next();
+            if (next % 2 != 0) {
+                iter.remove();
             }
         }
 

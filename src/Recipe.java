@@ -4,7 +4,7 @@ public class Recipe {
 
     private String name;
     private double totalCost;
-    Set<Product> products = new HashSet<>();
+    private Set<Product> products = new HashSet<>();
 
     public Recipe(String name, Product... products) {
         this.name = name;
@@ -38,9 +38,6 @@ public class Recipe {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Recipe recipe = (Recipe) o;
-        if (name.equals(recipe.name)) {
-            throw new DuplicateProductException("Нельзя добавить уже имеющийся рецепт!");
-        }
         return Double.compare(recipe.totalCost, totalCost) == 0 && name.equals(recipe.name) && products.equals(recipe.products);
     }
 

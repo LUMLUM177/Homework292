@@ -1,4 +1,4 @@
-public class NullFillingDataException extends RuntimeException {
+public class NullFillingDataException extends Exception {
 
     public NullFillingDataException() {
     }
